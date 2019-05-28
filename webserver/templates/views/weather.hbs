@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/jquery.js"></script>
+    <script src="/js/util.js"></script>
+</head>
+
+
+<script>
+    var GEOLOCATION_URL = undefined;
+    $(document).ready(function() {
+        GEOLOCATION_URL  = 'https://www.googleapis.com/geolocation/v1/geolocate?key={{api_key}}';
+    });
+</script>
+<body>
+    <div class="main-content">
+        {{>header}}
+
+        <input type ="button" onclick="getLocation()" value="Get Location"></div>
+
+         <div id="result">
+            <h4 id = "temperature"></h4>
+            <h4 id = "rain"></h4>
+         </div>
+    </div>
+
+    {{>footer}}
+</body>
+
+</html>
