@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const weather = require('./weather');
 
 const app = express();
+const port = process.env.PORT || 3000;
+
 app.use(bodyParser.urlencoded({
     extended: true
 }));
@@ -80,6 +82,6 @@ app.get('*', (req, res) => {
         errorMessage: 'Page not found.'
     })
 })
-app.listen(3000 , ()=>{
-    console.log('server running on port 3000');
+app.listen(port , ()=>{
+    console.log('server running on port' + port);
 })
